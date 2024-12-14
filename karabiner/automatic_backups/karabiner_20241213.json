@@ -1,0 +1,131 @@
+{
+    "global": { "show_in_menu_bar": false },
+    "profiles": [
+        {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Hyper Key (⌃⌥⇧⌘)",
+                        "manipulators": [
+                            {
+                                "description": "Change caps_lock to command+control+option+shift.",
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": ["left_command", "left_control", "left_option"]
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Hyper+Q triggers Command+Q",
+                                "from": {
+                                    "key_code": "q",
+                                    "modifiers": { "mandatory": ["left_command", "left_control", "left_option", "left_shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "q",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Hyper+W triggers Command+W",
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": { "mandatory": ["left_command", "left_control", "left_option", "left_shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "w",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Hyper+C triggers Command+C",
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": { "mandatory": ["left_command", "left_control", "left_option", "left_shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "c",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Hyper+V triggers Command+V",
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": { "mandatory": ["left_command", "left_control", "left_option", "left_shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "v",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Hyper+S triggers Control+S",
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": { "mandatory": ["left_command", "left_control", "left_option", "left_shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "s",
+                                        "modifiers": ["control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Hyper+D triggers Command+H",
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": { "mandatory": ["left_command", "left_control", "left_option", "left_shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "h",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Hyper+Tab triggers Command+T",
+                                "from": {
+                                    "key_code": "tab",
+                                    "modifiers": { "mandatory": ["left_command", "left_control", "left_option", "left_shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "t",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "name": "Default",
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+        }
+    ]
+}
