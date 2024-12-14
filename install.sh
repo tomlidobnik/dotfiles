@@ -13,9 +13,6 @@ else
     echo "Homebrew is already installed."
 fi
 
-# Install packages with Homebrew
-brew bundle
-
 # macOS settings
 echo "Configuring macOS system settings..."
 defaults write -g NSWindowShouldDragOnGesture -bool true
@@ -45,5 +42,11 @@ echo "Excel"
 echo "PowerPoint"
 echo "PDFGear"
 
+rm -rf ~/.config
 git clone https://github.com/tomlidobnik/dotfiles ~/.config
-mv ./config/com.apple.finder.plist ~/Library/Preferences/com.apple.finder.plist
+cd ~/.config
+mv com.apple.finder.plist ~/Library/Preferences/com.apple.finder.plist
+mv com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
+
+# Install packages with Homebrew
+brew bundle
