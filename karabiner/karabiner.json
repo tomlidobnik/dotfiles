@@ -5,6 +5,22 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Disable Control + Left Click",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
+                                    },
+                                    "pointing_button": "button1"
+                                },
+                                "to": [{ "pointing_button": "button1" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Hyper Key (⌃⌥⇧⌘)",
                         "manipulators": [
                             {
@@ -46,6 +62,20 @@
                                     {
                                         "key_code": "w",
                                         "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Hyper+D triggers Command+Option+W",
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": { "mandatory": ["left_command", "left_control", "left_option", "left_shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "h",
+                                        "modifiers": ["command", "option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -93,9 +123,9 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Hyper+D triggers Command+H",
+                                "description": "Hyper+H triggers Command+H",
                                 "from": {
-                                    "key_code": "d",
+                                    "key_code": "h",
                                     "modifiers": { "mandatory": ["left_command", "left_control", "left_option", "left_shift"] }
                                 },
                                 "to": [
@@ -124,6 +154,25 @@
                     }
                 ]
             },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 2611,
+                        "vendor_id": 13364
+                    },
+                    "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 53297,
+                        "vendor_id": 13364
+                    },
+                    "ignore": false
+                }
+            ],
             "name": "Default",
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }

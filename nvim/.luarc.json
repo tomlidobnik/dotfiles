@@ -3,5 +3,9 @@
         "Snacks",
         "keys",
         "opts"
+    ],
+    "diagnostics.disable": [
+        "missing-fields",
+        "undefined-doc-name"
     ]
 }

@@ -1,5 +1,6 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
+    fastfetch -c ~/.config/fastfetch/mini.jsonc --logo-type iterm --logo ~/.config/fastfetch/apple.png
 end
 function fish_greeting; end
 alias config="cd ~/.config/"
@@ -13,7 +14,15 @@ alias cc="clear & cd"
 alias fc="vi ~/.config/fish/config.fish"
 alias l="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias la="eza -a --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-alias f="yazi"
+alias ff="fastfetch -c ~/.config/fastfetch/mini.jsonc --logo-type iterm --logo ~/.config/fastfetch/apple.png"
+function f
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	yazi $argv --cwd-file="$tmp"
+	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+		builtin cd -- "$cwd"
+	end
+	rm -f -- "$tmp"
+end
 alias zz="zellij"
 alias zl="zellij list-sessions"
 alias za="zellij attach"
