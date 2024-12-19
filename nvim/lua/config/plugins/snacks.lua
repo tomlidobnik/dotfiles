@@ -17,26 +17,6 @@ return {
     statuscolumn = { enabled = true },
     words = { enabled = true },
     styles = {
-      terminal = {
-        keys = {
-          term_quit = {
-            '<C-/>',
-            function(self)
-              local alt_win = vim.fn.win_getid(vim.fn.winnr '#')
-
-              self:hide()
-
-              vim.schedule(function()
-                if alt_win and vim.api.nvim_win_is_valid(alt_win) then
-                  vim.api.nvim_set_current_win(alt_win)
-                end
-              end)
-            end,
-            mode = 't',
-            desc = 'Close terminal and focus last window',
-          },
-        },
-      },
       notification = {
         -- wo = { wrap = true } -- Wrap notifications
       },
@@ -78,13 +58,13 @@ return {
       end,
       desc = 'Dismiss All Notifications',
     },
-    {
-      '<c-/>',
-      function()
-        Snacks.terminal()
-      end,
-      desc = 'Toggle Terminal',
-    },
+    -- {
+    --   '<c-/>',
+    --   function()
+    --     Snacks.terminal()
+    --   end,
+    --   desc = 'Toggle Terminal',
+    -- },
     {
       '<leader>N',
       desc = 'Neovim News',
