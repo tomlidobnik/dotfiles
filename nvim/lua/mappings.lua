@@ -13,7 +13,12 @@ key.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 key.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 key.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 key.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+key.set("i", "<M-h>", "<Left>", { noremap = true, silent = true })
+key.set("i", "<M-j>", "<Down>", { noremap = true, silent = true })
+key.set("i", "<M-k>", "<Up>", { noremap = true, silent = true })
+key.set("i", "<M-l>", "<Right>", { noremap = true, silent = true })
 
+-- Mini keymaps
 local minifiles_toggle = function(...)
   if not MiniFiles.close() then
     MiniFiles.open(...)
@@ -21,7 +26,15 @@ local minifiles_toggle = function(...)
 end
 key.set("n", "\\", minifiles_toggle)
 
--- Snacks
+key.set("n", "<C-.>", function()
+  MiniSplitjoin.toggle()
+end, { desc = "Split-Join" })
+
+key.set("n", "<leader>gd", function()
+  MiniDiff.toggle_overlay()
+end, { desc = "Show Diff" })
+
+-- Snacks keymaps
 key.set("n", "<leader>n", function()
   Snacks.notifier.show_history()
 end, { desc = "Notification History" })
