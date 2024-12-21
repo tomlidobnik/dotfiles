@@ -1,94 +1,66 @@
 return {
-  'folke/snacks.nvim',
+  "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
-  ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
-    dashboard = { enabled = true },
-    indent = { enabled = true },
-    input = { enabled = true },
-    notifier = {
-      enabled = true,
-      timeout = 3000,
-    },
+    notifier = { timeout = 2000 },
     quickfile = { enabled = true },
-    scroll = { enabled = false },
     statuscolumn = { enabled = true },
-    words = { enabled = true },
+    dashboard = {
+      enabled = true,
+      preset = {
+        header = [[
+    ███╗   ███╗ █████╗ ██╗  ██╗███████╗   
+    ████╗ ████║██╔══██╗██║ ██╔╝██╔════╝   
+    ██╔████╔██║███████║█████╔╝ █████╗     
+    ██║╚██╔╝██║██╔══██║██╔═██╗ ██╔══╝     
+    ██║ ╚═╝ ██║██║  ██║██║  ██╗███████╗   
+    ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝   
+      ██████╗ ██████╗  ██████╗ ██╗        
+     ██╔════╝██╔═══██╗██╔═══██╗██║        
+     ██║     ██║   ██║██║   ██║██║        
+     ██║     ██║   ██║██║   ██║██║        
+     ╚██████╗╚██████╔╝╚██████╔╝███████╗   
+      ╚═════╝ ╚═════╝  ╚═════╝ ╚══════╝   
+███████╗████████╗██╗   ██╗███████╗███████╗
+██╔════╝╚══██╔══╝██║   ██║██╔════╝██╔════╝
+███████╗   ██║   ██║   ██║█████╗  █████╗  
+╚════██║   ██║   ██║   ██║██╔══╝  ██╔══╝  
+███████║   ██║   ╚██████╔╝██║     ██║     
+╚══════╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝     ]],
+      },
+      formats = {
+        key = function(item)
+          return { { "[", hl = "special" }, { item.key, hl = "key" }, { "]", hl = "special" } }
+        end,
+      },
+      sections = {
+        { section = "header", align = "center" },
+        { section = "recent_files", limit = 8, padding = 1 },
+        { section = "keys", padding = 1 },
+        { section = "startup" },
+      },
+    },
     styles = {
-      notification = {
-        -- wo = { wrap = true } -- Wrap notifications
+      lazygit = {
+        wo = {
+          winhighlight = "NormalFloat:None,FloatBorder:SnacksInputBorder,FloatTitle:SnacksInputTitle",
+          cursorline = false,
+        },
+      },
+      float = {
+        backdrop = false,
+      },
+      blame_line = {
+        backdrop = false,
       },
     },
   },
-  keys = {
-    {
-      '<leader>cR',
-      function()
-        Snacks.rename.rename_file()
-      end,
-      desc = 'Rename File',
-    },
-    {
-      '<leader>gB',
-      function()
-        Snacks.gitbrowse()
-      end,
-      desc = 'Git Browse',
-    },
-    {
-      '<leader>gb',
-      function()
-        Snacks.git.blame_line()
-      end,
-      desc = 'Git Blame Line',
-    },
-    {
-      '<leader>gg',
-      function()
-        Snacks.lazygit()
-      end,
-      desc = 'Lazygit',
-    },
-    {
-      '<leader>n',
-      function()
-        Snacks.notifier.hide()
-      end,
-      desc = 'Dismiss All Notifications',
-    },
-    -- {
-    --   '<c-/>',
-    --   function()
-    --     Snacks.terminal()
-    --   end,
-    --   desc = 'Toggle Terminal',
-    -- },
-    {
-      '<leader>N',
-      desc = 'Neovim News',
-      function()
-        Snacks.win {
-          file = vim.api.nvim_get_runtime_file('doc/news.txt', false)[1],
-          width = 0.6,
-          height = 0.6,
-          wo = {
-            spell = false,
-            wrap = false,
-            signcolumn = 'yes',
-            statuscolumn = ' ',
-            conceallevel = 3,
-          },
-        }
-      end,
-    },
-  },
   init = function()
-    vim.api.nvim_create_autocmd('User', {
-      pattern = 'VeryLazy',
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "VeryLazy",
       callback = function()
-        -- Setup some globals for debugging (lazy-loaded)
         _G.dd = function(...)
           Snacks.debug.inspect(...)
         end
@@ -98,11 +70,13 @@ return {
         vim.print = _G.dd -- Override print to use snacks for `:=` command
 
         -- Create some toggle mappings
-        Snacks.toggle.option('spell', { name = 'Spelling' }):map '<leader>ts'
-        Snacks.toggle.option('wrap', { name = 'Wrap' }):map '<leader>tw'
-        Snacks.toggle.diagnostics():map '<leader>td'
-        Snacks.toggle.option('conceallevel', { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 }):map '<leader>tc'
-        Snacks.toggle.indent():map '<leader>ti'
+        Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>ts")
+        Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>tw")
+        Snacks.toggle.diagnostics():map("<leader>td")
+        Snacks.toggle
+          .option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 })
+          :map("<leader>tc")
+        Snacks.toggle.indent():map("<leader>ti")
       end,
     })
   end,

@@ -5,7 +5,7 @@ return {
     config = function()
       local statusline = require("mini.statusline")
       statusline.setup({ use_icons = true })
-
+      require("mini.splitjoin").setup()
       local minifiles = require("mini.files")
       minifiles.setup({
         content = {

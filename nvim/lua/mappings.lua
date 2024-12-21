@@ -13,3 +13,45 @@ key.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 key.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 key.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 key.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+
+local minifiles_toggle = function(...)
+  if not MiniFiles.close() then
+    MiniFiles.open(...)
+  end
+end
+key.set("n", "\\", minifiles_toggle)
+
+-- Snacks
+key.set("n", "<leader>n", function()
+  Snacks.notifier.show_history()
+end, { desc = "Notification History" })
+
+key.set("n", "<leader>gB", function()
+  Snacks.gitbrowse()
+end, { desc = "Git Browse" })
+
+key.set("n", "<leader>gb", function()
+  Snacks.git.blame_line()
+end, { desc = "Git Blame Line" })
+
+key.set("n", "<leader>gg", function()
+  Snacks.lazygit()
+end, { desc = "Lazygit" })
+
+key.set("n", "<leader>gl", function()
+  Snacks.lazygit.log()
+end, { desc = "Lazygit Log" })
+key.set("n", "<leader>N", function()
+  Snacks.win({
+    file = vim.api.nvim_get_runtime_file("doc/news.txt", false)[1],
+    width = 0.6,
+    height = 0.6,
+    wo = {
+      spell = false,
+      wrap = false,
+      signcolumn = "yes",
+      statuscolumn = " ",
+      conceallevel = 3,
+    },
+  })
+end, { desc = "Neovim News" })
