@@ -8,6 +8,7 @@ key.set("n", "<leader>qt", "<cmd>TodoQuickFix<CR>", { desc = "Open [Q]uickfix li
 
 key.set("n", ";", ":", { noremap = true })
 key.set("n", "q:", "", { noremap = true, silent = true })
+key.set("n", "q;", "", { noremap = true, silent = true })
 
 key.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 key.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
@@ -17,6 +18,14 @@ key.set("i", "<M-h>", "<Left>", { noremap = true, silent = true })
 key.set("i", "<M-j>", "<Down>", { noremap = true, silent = true })
 key.set("i", "<M-k>", "<Up>", { noremap = true, silent = true })
 key.set("i", "<M-l>", "<Right>", { noremap = true, silent = true })
+
+-- Open a new tab
+key.set("n", "gn", ":tabnew<CR>", { noremap = true, silent = true, desc = "New tab" })
+-- Go to the next tab
+key.set("n", "<Tab>", ":tabnext<CR>", { noremap = true, silent = true, desc = "Next Tab" })
+
+-- Go to the previous tab
+key.set("n", "<S-Tab>", ":tabprevious<CR>", { noremap = true, silent = true, desc = "Previous Tab" })
 
 -- Mini keymaps
 local minifiles_toggle = function(...)

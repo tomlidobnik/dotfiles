@@ -1,6 +1,7 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
     #fastfetch -c ~/.config/fastfetch/mini.jsonc --logo-type iterm --logo ~/.config/fastfetch/apple.png
+    clear
 end
 function fish_greeting; end
 alias config="cd ~/.config/"

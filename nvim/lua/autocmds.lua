@@ -5,3 +5,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank()
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "gitcommit", "markdown" },
+  callback = function(event)
+    vim.keymap.set("i", "`", "`", { buffer = event.buf })
+  end,
+})

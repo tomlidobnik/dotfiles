@@ -36,7 +36,7 @@ return {
         end,
       },
       sections = {
-        { section = "header", align = "center" },
+        -- { section = "header", align = "center" },
         { section = "recent_files", limit = 8, padding = 1 },
         { section = "keys", padding = 1 },
         { section = "startup" },
