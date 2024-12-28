@@ -32,21 +32,15 @@ chsh -s /opt/homebrew/bin/fish
 
 # Instructions for additional apps
 echo "Go to System Settings > Keyboard > Text Input and disable all"
-echo "Optionally install next apps:"
-echo "-Mousescape"
-echo "-CLion"
-echo "-DaVinci Resolve"
-echo "-Wacom"
-echo "Word"
-echo "Excel"
-echo "PowerPoint"
-echo "PDFGear"
 
 rm -rf ~/.config
 git clone https://github.com/tomlidobnik/dotfiles ~/.config
 cd ~/.config
 mv com.apple.finder.plist ~/Library/Preferences/com.apple.finder.plist
-mv com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
+cd "/Users/tom/Library/Application Support"
+mkdir "com.com.mitchellh.ghostty"
+cd "com.mitchellh.ghostty"
+ln -s "/Users/tom/.config/ghostty/config" config
 
 # Install packages with Homebrew
 brew bundle

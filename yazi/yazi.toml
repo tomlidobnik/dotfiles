@@ -1,5 +1,2 @@
 [opener]
 edit = [{ run = 'nvim "$@"', block = true }]
-
-[flavor]
-use = "gruvbox-dark"
