@@ -1,0 +1,19 @@
+macos-window-shadow = false
+theme = nord
+font-size = 22
+#font-family = "Maple Mono"
+font-family = "IosevkaTerm Nerd Font"
+keybind = global:alt+c=toggle_quick_terminal
+macos-option-as-alt = true
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+confirm-close-surface = false
+macos-titlebar-style = hidden
+quick-terminal-animation-duration = 0
+background = #000000
+background-blur = 15
+background-opacity = 0.8
+
+keybind = super+k=text:\x13\x4b
+keybind = super+l=text:\x13\x4c

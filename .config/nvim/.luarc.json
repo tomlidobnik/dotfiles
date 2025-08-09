@@ -1,0 +1,10 @@
+{
+    "diagnostics.globals": [
+        "MiniFiles",
+        "Snacks",
+        "MiniSplitjoin",
+        "hipatterns",
+        "MiniDiff",
+        "vim"
+    ]
+}
