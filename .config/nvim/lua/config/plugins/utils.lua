@@ -32,19 +32,6 @@ return {
       vim.g.undotree_WindowLayout = 3
     end,
   },
-  { -- for diagnostics
-    event = "VeryLazy",
-    "folke/trouble.nvim",
-    opts = {},
-    cmd = "Trouble",
-    keys = {
-      {
-        "<leader>h",
-        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-        desc = "Buffer Diagnostics (Trouble)",
-      },
-    },
-  },
   { -- for colored brackets and divs
     "HiPhish/rainbow-delimiters.nvim",
     event = "VeryLazy",

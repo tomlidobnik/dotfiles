@@ -17,13 +17,11 @@ return {
       { "<leader>d", group = "Document" },
       { "<leader>g", group = "Git" },
       { "<leader>m", group = "Marks" },
-      { "<leader>o", group = "Obsidian" },
       { "<leader>r", group = "Rename" },
       { "<leader>s", group = "Search" },
       { "<leader>t", group = "Toggle" },
       { "<leader>w", group = "Workspace" },
       { "<leader>l", group = "LSP" },
-      { "<leader>x", group = "Trouble" },
     },
   },
 }
