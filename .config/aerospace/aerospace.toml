@@ -67,6 +67,13 @@ alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
 alt-shift-3 = 'move-node-to-workspace 3'
 
+alt-f = "fullscreen"
+
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Preview'
+run = ['layout floating','move-node-to-workspace 3']
+check-further-callbacks = false
 
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'

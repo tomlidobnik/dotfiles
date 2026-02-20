@@ -23,4 +23,4 @@ uv.lock
 # Jupyter
 ./.ipynb_checkpoints/
 
-
+**/build/

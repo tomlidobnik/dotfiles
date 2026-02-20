@@ -10,7 +10,7 @@ vim.keymap.set("x", "c", '"_c')
 
 local fzf = require("fzf-lua")
 
-k.add({
+wk.add({
   {
     mode = { "n" },
     { "<C-d>", "<C-d>zz", desc = "Move down in buffer with cursor centered" },
@@ -25,6 +25,7 @@ k.add({
     { "<C-j>", "<C-w><C-j>", hidden = true }, -- Move to lower window
     { "<C-k>", "<C-w><C-k>", hidden = true }, -- Move to upper window
     { "<C-q>", "<C-w><C-q>", hidden = true }, -- Close window
+    { "<leader>l", "<cmd>Neotree toggle<CR>", desc = "Neotree toggle" },
     {
       "<leader><leader>",
       function()

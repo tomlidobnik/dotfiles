@@ -1,132 +1,127 @@
 {
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.2",
   "schemes" : [
     {
-      "scrolling" : {
-        "distance" : {
-          "vertical" : 3
-        },
-        "acceleration" : {
-          "vertical" : 1
-        },
-        "reverse" : {
-          "vertical" : true
-        },
-        "speed" : {
-          "vertical" : 0
-        }
-      },
       "if" : {
         "device" : {
-          "serialNumber" : "000000000000",
+          "category" : "mouse",
           "productID" : "0xa6",
           "productName" : "Razer Viper V2 Pro",
-          "category" : "mouse",
+          "serialNumber" : "000000000000",
           "vendorID" : "0x1532"
         }
       },
       "pointer" : {
-        "disableAcceleration" : true,
-        "acceleration" : 1.2
-      }
-    },
-    {
+        "acceleration" : 1.2,
+        "disableAcceleration" : true
+      },
       "scrolling" : {
         "acceleration" : {
           "vertical" : 1
+        },
+        "distance" : {
+          "vertical" : 3
         },
         "reverse" : {
           "vertical" : true
         },
         "speed" : {
           "vertical" : 0
-        },
-        "distance" : {
-          "vertical" : 3
         }
-      },
+      }
+    },
+    {
       "if" : {
         "device" : {
-          "productID" : "0x27da",
-          "serialNumber" : "pqrs.org:Karabiner-DriverKit-VirtualHIDPointing",
           "category" : "mouse",
+          "productID" : "0x27da",
           "productName" : "Karabiner DriverKit VirtualHIDPointing 1.7.0",
+          "serialNumber" : "pqrs.org:Karabiner-DriverKit-VirtualHIDPointing",
           "vendorID" : "0x16c0"
         }
       },
       "pointer" : {
         "disableAcceleration" : true
-      }
-    },
-    {
+      },
       "scrolling" : {
-        "speed" : 0,
-        "acceleration" : 1,
+        "acceleration" : {
+          "vertical" : 1
+        },
+        "distance" : {
+          "vertical" : 3
+        },
         "reverse" : {
           "vertical" : true
         },
-        "distance" : 3
-      },
-      "if" : {
-        "device" : {
-          "category" : "mouse",
-          "productName" : "Logitech Pebble",
-          "vendorID" : "0x46d",
-          "serialNumber" : "2E61FDC85A9743AE",
-          "productID" : "0xb021"
+        "speed" : {
+          "vertical" : 0
         }
-      },
-      "pointer" : {
-        "disableAcceleration" : true,
-        "acceleration" : 0.8663
       }
     },
     {
-      "scrolling" : {
-        "reverse" : true,
-        "acceleration" : 1,
-        "speed" : 0,
-        "distance" : {
-          "horizontal" : 3,
-          "vertical" : "auto"
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xb021",
+          "productName" : "Logitech Pebble",
+          "serialNumber" : "2E61FDC85A9743AE",
+          "vendorID" : "0x46d"
         }
       },
+      "pointer" : {
+        "acceleration" : 0.8663,
+        "disableAcceleration" : true
+      },
+      "scrolling" : {
+        "acceleration" : 1,
+        "distance" : 3,
+        "reverse" : {
+          "vertical" : true
+        },
+        "speed" : 0
+      }
+    },
+    {
       "if" : {
         "device" : {
           "category" : "mouse",
           "productID" : "0xd031",
-          "vendorID" : "0x3434",
-          "productName" : "Keychron Link "
+          "productName" : "Keychron Link ",
+          "vendorID" : "0x3434"
         }
       },
       "pointer" : {
         "acceleration" : 0.8655,
         "disableAcceleration" : true
-      }
-    },
-    {
-      "pointer" : {
-        "disableAcceleration" : true
-      },
-      "if" : {
-        "device" : {
-          "category" : "mouse",
-          "vendorID" : "0x3434",
-          "serialNumber" : "SN1234567890",
-          "productID" : "0xd03f",
-          "productName" : "Keychron M6"
-        }
       },
       "scrolling" : {
         "acceleration" : 1,
-        "reverse" : true,
         "distance" : 3,
+        "reverse" : true,
         "speed" : 0
       }
     },
     {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xd03f",
+          "productName" : "Keychron M6",
+          "serialNumber" : "SN1234567890",
+          "vendorID" : "0x3434"
+        }
+      },
       "pointer" : {
         "disableAcceleration" : true
       },
+      "scrolling" : {
+        "acceleration" : 1,
+        "distance" : 3,
+        "reverse" : true,
+        "speed" : 0
+      }
+    },
+    {
       "if" : {
         "device" : {
           "category" : "mouse",
@@ -135,49 +130,49 @@
           "vendorID" : "0x3434"
         }
       },
+      "pointer" : {
+        "disableAcceleration" : true
+      },
       "scrolling" : {
+        "acceleration" : 1,
         "distance" : 3,
-        "speed" : 0,
         "reverse" : true,
-        "acceleration" : 1
+        "speed" : 0
       }
     },
     {
       "buttons" : {
         "universalBackForward" : true
       },
-      "pointer" : {
-        "disableAcceleration" : true,
-        "acceleration" : 0.6
-      },
       "if" : {
         "device" : {
-          "productID" : "0x27da",
           "category" : "mouse",
-          "serialNumber" : "pqrs.org:Karabiner-DriverKit-VirtualHIDPointing",
+          "productID" : "0x27da",
           "productName" : "Karabiner DriverKit VirtualHIDPointing 1.8.0",
+          "serialNumber" : "pqrs.org:Karabiner-DriverKit-VirtualHIDPointing",
           "vendorID" : "0x16c0"
         }
       },
+      "pointer" : {
+        "acceleration" : 0.6,
+        "disableAcceleration" : true
+      },
       "scrolling" : {
+        "acceleration" : {
+          "vertical" : 1
+        },
         "distance" : {
           "vertical" : 3
-        },
-        "speed" : {
-          "vertical" : 0
         },
         "reverse" : {
           "vertical" : true
         },
-        "acceleration" : {
-          "vertical" : 1
+        "speed" : {
+          "vertical" : 0
         }
       }
     },
     {
-      "pointer" : {
-        "acceleration" : 0.8059
-      },
       "if" : {
         "device" : {
           "category" : "trackpad",
@@ -185,17 +180,20 @@
           "productName" : "Apple Internal Keyboard \/ Trackpad",
           "vendorID" : "0x0"
         }
+      },
+      "pointer" : {
+        "acceleration" : 0.8059
       }
     },
     {
       "if" : {
+        "app" : "org.pqrs.Karabiner-Elements.Settings",
         "device" : {
-          "vendorID" : "0x0",
-          "productName" : "Apple Internal Keyboard \/ Trackpad",
+          "category" : "trackpad",
           "productID" : "0x0",
-          "category" : "trackpad"
-        },
-        "app" : "org.pqrs.Karabiner-Elements.Settings"
+          "productName" : "Apple Internal Keyboard \/ Trackpad",
+          "vendorID" : "0x0"
+        }
       },
       "scrolling" : {
         "acceleration" : {
@@ -204,26 +202,26 @@
       }
     },
     {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0x3939",
+          "productName" : "Ferris sweep",
+          "serialNumber" : "vial:f64c2b3c",
+          "vendorID" : "0xc2ab"
+        }
+      },
       "pointer" : {
         "acceleration" : 0.2,
         "disableAcceleration" : true,
         "speed" : 0.1
       },
-      "if" : {
-        "device" : {
-          "serialNumber" : "vial:f64c2b3c",
-          "category" : "mouse",
-          "vendorID" : "0xc2ab",
-          "productID" : "0x3939",
-          "productName" : "Ferris sweep"
-        }
-      },
       "scrolling" : {
-        "distance" : {
-          "vertical" : 3
-        },
         "acceleration" : {
           "vertical" : 1
+        },
+        "distance" : {
+          "vertical" : 3
         },
         "speed" : {
           "vertical" : 0
@@ -231,25 +229,51 @@
       }
     },
     {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xd030",
+          "productName" : "Keychron Link ",
+          "vendorID" : "0x3434"
+        }
+      },
       "pointer" : {
         "acceleration" : 1.0387,
         "disableAcceleration" : true
       },
+      "scrolling" : {
+        "acceleration" : 1,
+        "distance" : 3,
+        "reverse" : true,
+        "speed" : 0
+      }
+    },
+    {
       "if" : {
         "device" : {
           "category" : "mouse",
-          "productName" : "Keychron Link ",
-          "productID" : "0xd030",
+          "productID" : "0xd043",
+          "productName" : "Keychron 1K Link",
           "vendorID" : "0x3434"
         }
       },
+      "pointer" : {
+        "disableAcceleration" : true
+      },
       "scrolling" : {
-        "distance" : 3,
-        "acceleration" : 1,
-        "speed" : 0,
-        "reverse" : true
+        "acceleration" : {
+          "vertical" : 1
+        },
+        "distance" : {
+          "vertical" : 3
+        },
+        "reverse" : {
+          "vertical" : true
+        },
+        "speed" : {
+          "vertical" : 0
+        }
       }
     }
-  ],
-  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.0"
+  ]
 }

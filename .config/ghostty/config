@@ -1,6 +1,6 @@
 macos-window-shadow = false
 theme = nord
-font-size = 22
+font-size = 16
 #font-family = "Maple Mono"
 font-family = "IosevkaTerm Nerd Font"
 keybind = global:alt+c=toggle_quick_terminal
@@ -12,8 +12,13 @@ confirm-close-surface = false
 macos-titlebar-style = hidden
 quick-terminal-animation-duration = 0
 background = #000000
-background-blur = 15
-background-opacity = 0.8
+#background-blur = 15
+#background-opacity = 0.8
+background-image="/Users/tomiko/dotfiles/.config/ghostty/ign-0008.png"
+background-image-fit="cover"
+background-image-opacity=0.3
+
 
 keybind = super+k=text:\x13\x4b
 keybind = super+l=text:\x13\x4c
+#keybind = ctrl+a=text:\x67\x0a

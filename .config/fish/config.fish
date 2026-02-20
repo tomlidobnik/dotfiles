@@ -4,6 +4,25 @@ end
 
 function fish_greeting; end
 
+function spf
+    set os $(uname -s)
+
+    if test "$os" = "Linux"
+        set spf_last_dir "$HOME/.local/state/superfile/lastdir"
+    end
+
+    if test "$os" = "Darwin"
+        set spf_last_dir "$HOME/Library/Application Support/superfile/lastdir"
+    end
+
+    command spf $argv
+
+    if test -f "$spf_last_dir"
+        source "$spf_last_dir"
+        rm -f -- "$spf_last_dir" >> /dev/null
+    end
+end
+
 function f
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
 	yazi $argv --cwd-file="$tmp"
@@ -48,12 +67,16 @@ alias cc="clear & cd"
 alias l="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --group-directories-first"
 alias ll="eza --color=always --long --git --icons=always --no-user --group-directories-first"
 alias la="eza -a --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --group-directories-first"
-alias ff="fastfetch"
+alias fa="fastfetch"
+alias ff="yazi"
 alias p=pgcli
 alias t="tmux attach"
-alias d="deactivate"
+# alias d="deactivate"
+alias d="zi"
 alias venv="python3 -m venv venv"
 alias cd="z"
+# alias timewr="rm -rf ~/.local/share/timewarrior/data/"
+alias s="ssh pi@tom.tinysun.net"
 alias gi="git init && aig"
 alias gs="git status"
 alias aig="cp ~/.config/.gitignore-template ./.gitignore"
@@ -79,3 +102,20 @@ export EDITOR="nvim"
 fish_add_path "/Users/tomiko/.local/bin"
 
 starship init fish | source
+alias conda="/opt/homebrew/anaconda3/bin/conda"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# if test -f /opt/homebrew/anaconda3/bin/conda
+#     eval /opt/homebrew/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+# else
+#     if test -f "/opt/homebrew/anaconda3/etc/fish/conf.d/conda.fish"
+#         . "/opt/homebrew/anaconda3/etc/fish/conf.d/conda.fish"
+#     else
+#         set -x PATH "/opt/homebrew/anaconda3/bin" $PATH
+#     end
+# end
+# <<< conda initialize <<<
+
+set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense' # optional
+carapace _carapace | source

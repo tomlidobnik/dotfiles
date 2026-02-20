@@ -1,2 +1,6 @@
 [opener]
 edit = [{ run = 'nvim "$@"', block = true }]
+
+[mgr]
+ratio = [2, 5, 5]
+scrolloff = 4
