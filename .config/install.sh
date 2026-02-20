@@ -30,9 +30,6 @@ defaults write -g KeyRepeat -int 1
 defaults write -g InitialKeyRepeat -int 20
 killall Dock
 
-# Ensure Fish shell is available in /etc/shells and set it as the default
-grep -qxF "/opt/homebrew/bin/fish" /etc/shells || echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
-chsh -s /opt/homebrew/bin/fish
 
 # Instructions for additional apps
 echo "Go to System Settings > Keyboard > Text Input and disable all"
@@ -41,3 +38,7 @@ cd "~/dotfiles/"
 stow .
 # Install packages with Homebrew
 brew bundle
+
+# Ensure Fish shell is available in /etc/shells and set it as the default
+grep -qxF "/opt/homebrew/bin/fish" /etc/shells || echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
+chsh -s /opt/homebrew/bin/fish
