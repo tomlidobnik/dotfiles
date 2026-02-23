@@ -42,3 +42,6 @@ stow .
 # Ensure Fish shell is available in /etc/shells and set it as the default
 grep -qxF "/opt/homebrew/bin/fish" /etc/shells || echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
 chsh -s /opt/homebrew/bin/fish
+
+# Symlinks
+ln ./lazygit/config.yml "$HOME/Library/Application Support/lazygit/config.yml"

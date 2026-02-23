@@ -30,6 +30,7 @@ brew "sesh"
 brew "viu"
 brew "chafa"
 brew "7-zip"
+brew "ydiff"
 
 cask "visual-studio-code"
 cask "google-chrome"
