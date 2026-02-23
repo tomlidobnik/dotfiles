@@ -138,7 +138,12 @@ return {
           [vim.diagnostic.severity.HINT] = "󰌶 ",
         },
       },
-      virtual_text = { current_line = true },
+      virtual_text = {
+        source = "if_many",
+        spacing = 2,
+      },
+      update_in_insert = true,
+      virtual_lines = false,
       -- virtual_text = {
       --   source = "if_many",
       --   spacing = 2,
@@ -164,6 +169,7 @@ return {
     --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+    local lspconfig_util = require("lspconfig.util")
     local servers = {
       bashls = {},
       marksman = {},
@@ -183,6 +189,13 @@ return {
           "clangd",
           "--fallback-style={BasedOnStyle: LLVM, IndentWidth: 4, TabWidth: 4, UseTab: Never}",
         },
+      },
+      rust_analyzer = {
+        single_file_support = true,
+        root_dir = function(fname)
+          return lspconfig_util.root_pattern("Cargo.toml", "rust-project.json", ".git")(fname)
+            or vim.fs.dirname(fname)
+        end,
       },
       lua_ls = {},
     } -- Ensure the servers and tools above are installed
@@ -208,6 +221,7 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
       automatic_installation = false,
+      automatic_enable = false,
       handlers = {
         function(server_name)
           if server_name == "rust_analyzer" then

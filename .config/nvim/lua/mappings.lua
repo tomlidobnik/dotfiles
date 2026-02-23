@@ -13,6 +13,12 @@ local fzf = require("fzf-lua")
 wk.add({
   {
     mode = { "n" },
+    { "<leader>qr", "<cmd>Leet run<CR>", desc = "Run code" },
+    { "<leader>qs", "<cmd>Leet submit<CR>", desc = "Submit code" },
+    { "<leader>qi", "<cmd>Leet info<CR>", desc = "Get info" },
+    { "<leader>qo", "<cmd>Leet open<CR>", desc = "Open in browser" },
+    { "<leader>qd", "<cmd>Leet desc<CR>", desc = "Toggle decription" },
+    { "<leader>qm", "<cmd>Leet menu<CR>", desc = "Open menu" },
     { "<C-d>", "<C-d>zz", desc = "Move down in buffer with cursor centered" },
     { "<C-u>", "<C-u>zz", desc = "Move up in buffer with cursor centered" },
     { "n", "nzzzv", desc = "Search next with cursor centered" },
@@ -48,7 +54,7 @@ wk.add({
       desc = "Search by Grep",
     },
     {
-      "<leader>d",
+      "<leader>h",
       function()
         require("fzf-lua").lsp_document_diagnostics()
       end,

@@ -27,17 +27,17 @@ defaults write -g NSAutomaticDashSubstitutionEnabled -bool false
 defaults write com.apple.dock autohide-time-modifier -float 0.15;
 defaults delete com.apple.dock autohide-delay;
 defaults write -g KeyRepeat -int 1
-defaults write -g InitialKeyRepeat -int 20
+defaults write -g InitialKeyRepeat -int 15
 killall Dock
 
 
 # Instructions for additional apps
 echo "Go to System Settings > Keyboard > Text Input and disable all"
+# Install packages with Homebrew
+brew bundle
 
 cd "~/dotfiles/"
 stow .
-# Install packages with Homebrew
-brew bundle
 
 # Ensure Fish shell is available in /etc/shells and set it as the default
 grep -qxF "/opt/homebrew/bin/fish" /etc/shells || echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells

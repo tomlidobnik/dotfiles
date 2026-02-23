@@ -49,6 +49,12 @@ return {
 
       -- (Default) Only show the documentation popup when manually triggered
       completion = {
+        menu = { auto_show = true },
+        trigger = {
+          show_on_keyword = true,
+          show_on_trigger_character = true,
+          show_on_insert_on_trigger_character = true,
+        },
         documentation = { auto_show = true, window = { border = "single" } },
       },
       signature = { enabled = true },
@@ -56,6 +62,11 @@ return {
       sources = {
         default = { "lsp", "path", "snippets", "buffer", "emoji", "sql" },
         providers = {
+          lsp = {
+            name = "LSP",
+            module = "blink.cmp.sources.lsp",
+            min_keyword_length = 0,
+          },
           snippets = {
             name = "snippets",
             module = "blink.cmp.sources.snippets",

@@ -91,7 +91,7 @@
         }
       },
       "pointer" : {
-        "acceleration" : 0.8655,
+        "acceleration" : 0.9326,
         "disableAcceleration" : true
       },
       "scrolling" : {

@@ -22,7 +22,6 @@ return {
       typescriptreact = { "prettierd", "prettier", stop_after_first = true },
       css = { "prettierd", "prettier", stop_after_first = true },
       html = { "prettierd", "prettier", stop_after_first = true },
-      htmldjango = { "djlint" },
       typst = { "prettypst" },
     },
     format_on_save = {

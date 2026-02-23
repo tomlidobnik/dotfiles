@@ -14,7 +14,7 @@ quick-terminal-animation-duration = 0
 background = #000000
 #background-blur = 15
 #background-opacity = 0.8
-background-image="/Users/tomiko/dotfiles/.config/ghostty/ign-0008.png"
+background-image="/Users/tom/dotfiles/.config/ghostty/ign-0008.png"
 background-image-fit="cover"
 background-image-opacity=0.3
 

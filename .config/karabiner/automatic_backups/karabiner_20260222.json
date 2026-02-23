@@ -510,7 +510,6 @@
                     },
                     {
                         "description": "Hyper+t -> left_command+tab",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {

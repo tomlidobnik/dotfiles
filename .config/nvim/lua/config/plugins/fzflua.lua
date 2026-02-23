@@ -22,8 +22,8 @@ return {
     },
     files = {
       -- Show hidden files but respect .gitignore
-      rg_opts = [[--color=never --hidden --files -g "!.git" --ignore-file ~/.config/git/ignore]],
-      fd_opts = [[--color=never --hidden --type f --type l --exclude .git --ignore-file ~/.config/git/ignore]],
+      -- rg_opts = [[--color=never --hidden --files -g "!.git" --ignore-file ~/.config/git/ignore]],
+      -- fd_opts = [[--color=never --hidden --type f --type l --exclude .git --ignore-file ~/.config/git/ignore]],
     },
   },
 }

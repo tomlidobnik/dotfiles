@@ -99,7 +99,7 @@ atuin init fish --disable-up-arrow | source
 export EDITOR="nvim"
 
 # uv
-fish_add_path "/Users/tomiko/.local/bin"
+fish_add_path "/Users/tom/.local/bin"
 
 starship init fish | source
 alias conda="/opt/homebrew/anaconda3/bin/conda"
