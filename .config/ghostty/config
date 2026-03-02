@@ -1,6 +1,6 @@
 macos-window-shadow = false
 theme = nord
-font-size = 16
+font-size = 14
 #font-family = "Maple Mono"
 font-family = "IosevkaTerm Nerd Font"
 keybind = global:alt+c=toggle_quick_terminal
@@ -18,7 +18,42 @@ background-image="/Users/tom/dotfiles/.config/ghostty/ign-0008.png"
 background-image-fit="cover"
 background-image-opacity=0.3
 
-
 keybind = super+k=text:\x13\x4b
 keybind = super+l=text:\x13\x4c
-#keybind = ctrl+a=text:\x67\x0a
+
+# Ctrl s
+keybind = super+alt+ctrl+shift+s=text:\x13
+
+# Ctrl a
+keybind = super+alt+ctrl+shift+a=text:\x01
+
+# Ctrl m
+# keybind = super+alt+ctrl+shift+m=text:\x0d
+
+# Hyper M to Ctrl Space
+keybind = super+alt+ctrl+shift+m=text:\x00
+
+# Switch windows
+keybind = super+alt+ctrl+shift+1=text:\x13\x31
+keybind = super+alt+ctrl+shift+2=text:\x13\x32
+keybind = super+alt+ctrl+shift+3=text:\x13\x33
+keybind = super+alt+ctrl+shift+4=text:\x13\x34
+
+keybind = super+alt+ctrl+shift+o=text:\x03
+
+# Ctrl + y / n / p
+keybind = super+alt+ctrl+shift+y=text:\x19
+keybind = super+alt+ctrl+shift+n=text:\x0e
+keybind = super+alt+ctrl+shift+p=text:\x10
+
+# u -> Ctrl+D
+keybind = super+alt+ctrl+shift+u=text:\x04
+
+# i -> Ctrl+U
+keybind = super+alt+ctrl+shift+i=text:\x15
+
+# hjkl -> Ctrl+hjkl
+keybind = super+alt+ctrl+shift+h=text:\x08
+keybind = super+alt+ctrl+shift+j=text:\x0a
+keybind = super+alt+ctrl+shift+k=text:\x0b
+keybind = super+alt+ctrl+shift+l=text:\x0c

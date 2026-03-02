@@ -1,8 +1,5 @@
 {
-    "global": {
-        "event_input_source_backend": "cgeventtap",
-        "show_in_menu_bar": false
-    },
+    "global": { "show_in_menu_bar": false },
     "profiles": [
         {
             "complex_modifications": {
@@ -23,7 +20,6 @@
                     },
                     {
                         "description": "c1",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -43,7 +39,6 @@
                     },
                     {
                         "description": "Hyper+2 -> Ctrl+S then 2",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -63,7 +58,6 @@
                     },
                     {
                         "description": "Hyper+3 -> Ctrl+S then 3",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -83,7 +77,6 @@
                     },
                     {
                         "description": "Hyper+4 -> Ctrl+S then 4",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -103,7 +96,6 @@
                     },
                     {
                         "description": "Hyper+1 -> Ctrl+S then 1",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -123,7 +115,6 @@
                     },
                     {
                         "description": "Hyper+q -> left_option+q",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -142,7 +133,6 @@
                     },
                     {
                         "description": "Hyper+a -> left_control+a",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -161,7 +151,6 @@
                     },
                     {
                         "description": "Disable Control + Left Click",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -178,11 +167,10 @@
                     },
                     {
                         "description": "Change caps_lock to Hyper Key (⌃⌥⇧⌘)",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "escape",
+                                    "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
@@ -198,7 +186,6 @@
                     },
                     {
                         "description": "Hyper+s -> left_control+s",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -217,7 +204,6 @@
                     },
                     {
                         "description": "Hyper+h -> left_arrow",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -236,7 +222,6 @@
                     },
                     {
                         "description": "Hyper+j -> down_arrow",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -255,7 +240,6 @@
                     },
                     {
                         "description": "Hyper+k -> up_arrow",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -274,7 +258,6 @@
                     },
                     {
                         "description": "Hyper+l -> right_arrow",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -293,7 +276,6 @@
                     },
                     {
                         "description": "Hyper+u -> left_control+d",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -312,7 +294,6 @@
                     },
                     {
                         "description": "Hyper+i -> left_control+u",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -331,7 +312,6 @@
                     },
                     {
                         "description": "Hyper+o -> return_or_enter",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -350,7 +330,6 @@
                     },
                     {
                         "description": "Hyper+p -> delete_or_backspace",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -369,7 +348,6 @@
                     },
                     {
                         "description": "Hyper+semicolon -> left_command+z",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -388,7 +366,6 @@
                     },
                     {
                         "description": "Hyper+quote -> left_shift, left_command+z",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -407,7 +384,6 @@
                     },
                     {
                         "description": "Hyper+period -> left_control+n",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -426,7 +402,6 @@
                     },
                     {
                         "description": "Hyper+comma -> left_control+p",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -445,7 +420,6 @@
                     },
                     {
                         "description": "Hyper+slash -> left_control+y",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -464,7 +438,6 @@
                     },
                     {
                         "description": "Hyper+m -> left_option+c",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -483,7 +456,6 @@
                     },
                     {
                         "description": "Hyper+c -> left_command+c",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -502,7 +474,6 @@
                     },
                     {
                         "description": "Hyper+v -> left_command+v",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -521,7 +492,6 @@
                     },
                     {
                         "description": "Hyper+y -> left_control+c",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
