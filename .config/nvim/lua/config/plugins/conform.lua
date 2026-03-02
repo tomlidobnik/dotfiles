@@ -23,10 +23,18 @@ return {
       css = { "prettierd", "prettier", stop_after_first = true },
       html = { "prettierd", "prettier", stop_after_first = true },
       typst = { "prettypst" },
+      xml = { "xmlformatter" },
     },
     format_on_save = {
       timeout_ms = 500,
       lsp_format = "fallback",
+    },
+    formatters = {
+      xmlformat = {
+        command = "xmlformat",
+        args = { "--selfclose", "-" },
+        stdin = true,
+      },
     },
   },
 }

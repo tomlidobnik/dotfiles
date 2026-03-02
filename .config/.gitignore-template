@@ -24,3 +24,8 @@ uv.lock
 ./.ipynb_checkpoints/
 
 **/build/
+.idea/
+bin/
+obj/
+
+
