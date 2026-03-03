@@ -81,6 +81,7 @@ alias gi="git init && aig"
 alias gs="git status"
 alias aig="cp ~/.config/.gitignore-template ./.gitignore"
 alias u="uv run"
+alias vi="/Users/tom/Downloads/nvim-macos-arm64/bin/nvim -u /Users/tom/Downloads/nvim/init.lua"
 
 
 function ga
@@ -119,3 +120,4 @@ alias conda="/opt/homebrew/anaconda3/bin/conda"
 
 set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense' # optional
 carapace _carapace | source
+export PATH="$HOME/.local/apps/nvim-macos-arm64/bin:$PATH"
