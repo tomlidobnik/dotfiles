@@ -1,3 +1,6 @@
+[python]
+python_binary = [".venv/bin/python", "python3", "python"]
+
 [character]
 success_symbol = "[λ](bold green)"
 error_symbol = "[λ](bold red)"

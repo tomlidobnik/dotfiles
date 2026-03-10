@@ -691,7 +691,7 @@ setup_treesitter()
 require("nvim-tree").setup({
 	view = {
 		side = "right",
-		width = 35,
+		width = 60,
 	},
 	filters = {
 		dotfiles = false,
@@ -699,9 +699,30 @@ require("nvim-tree").setup({
 	renderer = {
 		group_empty = true,
 	},
+	on_attach = function(bufnr)
+		local api = require("nvim-tree.api")
+		api.config.mappings.default_on_attach(bufnr)
+		vim.keymap.set("n", "l", api.node.open.edit, { buffer = bufnr, silent = true })
+		vim.keymap.set("n", "h", api.node.navigate.parent_close, { buffer = bufnr, silent = true })
+	end,
 })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+	group = augroup,
+	callback = function()
+		local wins = vim.api.nvim_list_wins()
+		local non_tree_wins = vim.tbl_filter(function(w)
+			local buf = vim.api.nvim_win_get_buf(w)
+			return vim.bo[buf].filetype ~= "NvimTree"
+		end, wins)
+		if #non_tree_wins == 0 then
+			vim.cmd("quit")
+		end
+	end,
+})
+
 vim.keymap.set("n", "<leader>e", function()
-	require("nvim-tree.api").tree.toggle()
+	require("nvim-tree.api").tree.open()
 end, { desc = "Toggle NvimTree" })
 
 vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { bg = "none" })

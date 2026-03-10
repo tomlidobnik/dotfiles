@@ -1,6 +1,6 @@
 macos-window-shadow = false
 theme = nord
-font-size = 14
+font-size = 16
 #font-family = "Maple Mono"
 font-family = "IosevkaTerm Nerd Font"
 keybind = global:alt+c=toggle_quick_terminal
