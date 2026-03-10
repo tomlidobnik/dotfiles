@@ -12,8 +12,8 @@ confirm-close-surface = false
 macos-titlebar-style = hidden
 quick-terminal-animation-duration = 0
 background = #000000
-#background-blur = 15
-#background-opacity = 0.8
+# background-blur = 15
+# background-opacity = 0.8
 background-image="/Users/tom/dotfiles/.config/ghostty/ign-0008.png"
 background-image-fit="cover"
 background-image-opacity=0.3
@@ -26,9 +26,6 @@ keybind = super+alt+ctrl+shift+s=text:\x13
 
 # Ctrl a
 keybind = super+alt+ctrl+shift+a=text:\x01
-
-# Ctrl m
-# keybind = super+alt+ctrl+shift+m=text:\x0d
 
 # Hyper M to Ctrl Space
 keybind = super+alt+ctrl+shift+m=text:\x00
