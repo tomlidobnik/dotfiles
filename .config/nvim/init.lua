@@ -23,7 +23,7 @@ vim.opt.hlsearch = true -- highlight search matches
 vim.opt.incsearch = true -- show matches as you type
 
 vim.opt.signcolumn = "yes" -- always show a sign column
-vim.opt.showmatch = true -- highlights matching brackets
+vim.opt.showmatch = false -- highlights matching brackets
 vim.opt.cmdheight = 1 -- single line command line
 vim.opt.completeopt = "menuone,noinsert,noselect" -- completion options
 vim.opt.showmode = false -- do not show the mode, instead have it in statusline
@@ -842,7 +842,7 @@ end, { desc = "FZF Diagnostics Workspace" })
 
 -- MINI
 require("mini.surround").setup({})
-require("mini.pairs").setup({})
+-- require("mini.pairs").setup({})
 require("mini.ai").setup({})
 require("mini.comment").setup({})
 local MiniNotify = require("mini.notify")
@@ -1202,3 +1202,12 @@ vim.lsp.enable({
 	"efm",
 	"marksman",
 })
+
+if vim.g.neovide then
+	vim.notify("neovide: " .. tostring(vim.g.neovide_version), vim.log.levels.INFO)
+	vim.cmd("cd Documents/markdown")
+	vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
+	vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window" })
+	vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to top window" })
+	vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
+end
