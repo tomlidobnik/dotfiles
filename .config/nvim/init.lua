@@ -490,20 +490,55 @@ setup_lualine()
 local setup_alpha = function()
 	local alpha = require("alpha")
 	local dashboard = require("alpha.themes.dashboard")
+	local elapsed_ms = (vim.loop.hrtime() - _G._startup_time) / 1e6
 	dashboard.section.header.val = {
-		[[                                                 ]],
-		[[                                                 ]],
-		[[                                                 ]],
-		[[                                                 ]],
-		[[                                                 ]],
-		[[                                                 ]],
-		[[                               __                ]],
-		[[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
-		[[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
-		[[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
-		[[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
-		[[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+		[[                                ]],
+		[[                                ]],
+		[[                                ]],
+		[[                                ]],
+		[[                                ]],
+		[[                                ]],
+		[[       \`*-.                    ]],
+		[[        )  _`-.                 ]],
+		[[       .  : `. .                ]],
+		[[       : _   '  \               ]],
+		[[       ; *` _.   `*-._          ]],
+		[[       `-.-'          `-.       ]],
+		[[         ;       `       `.     ]],
+		[[         :.       .        \    ]],
+		[[         . \  .   :   .-'   .   ]],
+		[[         '  `+.;  ;  '      :   ]],
+		[[         :  '  |    ;       ;-. ]],
+		[[         ; '   : :`-:     _.`* ;]],
+		[[[bug] .*' /  .*' ; .*`- +'  `*' ]],
+		[[      `*-*   `*-*  `*-*']],
+
+		-- [[,-.       _,---._ __  / \]],
+		-- [[/  )    .-'       `./ /   \]],
+		-- [[(  (   ,'            `/    /|]],
+		-- [[\  `-"             \'\   / |]],
+		-- [[`.              ,  \ \ /  |]],
+		-- [[/`.          ,'-`----Y   |]],
+		-- [[(            ;        |   ']],
+		-- [[|  ,-.    ,-'         |  /]],
+		-- [[|  | (   |        hjw | /]],
+		-- [[)  |  \  `.___________|/]],
+		-- [[`--'   `--']],
 	}
+	-- dashboard.section.header.val = {
+	-- 	[[                                                 ]],
+	-- 	[[                                                 ]],
+	-- 	[[                                                 ]],
+	-- 	[[                                                 ]],
+	-- 	[[                                                 ]],
+	-- 	[[                                                 ]],
+	-- 	[[                               __                ]],
+	-- 	[[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
+	-- 	[[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
+	-- 	[[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
+	-- 	[[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
+	-- 	[[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+	-- }
 
 	dashboard.section.buttons.val = {
 		dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
@@ -511,7 +546,6 @@ local setup_alpha = function()
 		dashboard.button("g", "  Grep ", ":FzfLua live_grep<CR>"),
 		dashboard.button("q", "  Quit", ":qa<CR>"),
 	}
-	local elapsed_ms = (vim.loop.hrtime() - _G._startup_time) / 1e6
 
 	dashboard.section.footer.val = {
 		("Startup: %.2f ms"):format(elapsed_ms),
@@ -522,7 +556,7 @@ local setup_alpha = function()
 	alpha.setup(dashboard.config)
 end
 
-setup_alpha()
+-- setup_alpha() -- call at end so the loading time is correct
 
 -- FLASH
 require("flash").setup({
@@ -1211,3 +1245,12 @@ if vim.g.neovide then
 	vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to top window" })
 	vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 end
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "gitcommit", "markdown" },
+	callback = function(event)
+		vim.keymap.set("i", "`", "`", { buffer = event.buf })
+	end,
+})
+
+setup_alpha()

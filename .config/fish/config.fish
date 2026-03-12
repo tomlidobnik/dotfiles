@@ -122,3 +122,5 @@ set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense' # optional
 carapace _carapace | source
 export PATH="$HOME/.local/apps/nvim-macos-arm64/bin:$PATH"
 export NEOVIDE_CONFIG="$HOME/.config/neovide/config.toml"
+set -gx EDITOR nvim
+set -gx VISUAL nvim
